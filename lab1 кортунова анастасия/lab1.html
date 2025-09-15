@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа1 - Вариант 10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* Задание 1: Стилизация текста по варианту 10 */
+        #task1 {
+            text-align: left; /* Выравнивание по правому краю */
+        }
+        #task1 p {
+            color: #65A82E;       /* Цвет текста */
+            background-color: #8F8805; /* Цвет фона текста */
+            padding: 15px;        /* Внутренний отступ */
+            border-radius: 5px;   /* Скругление углов  */
+        }
+
+        /* Задание 2: Позиционирование картинок */
+        #task2 {
+            position: relative; /* Создаем контекст для позиционирования дочерних элементов */
+            height: 200px; /* Высота контейнера для картинок */
+            background-color: #ffffff;
+        }
+        #task2 img {
+            position: absolute; 
+            top: 50%;           /* Сдвигаем верхний край вниз на 50% высоты родителя */
+            left: 50%;          /* Сдвигаем левый край вправо на 50% ширины родителя */
+            transform: translate(-50%, -50%); /* Сдвигаем сам элемент обратно на половину его ширины и высоты, чтобы центрировать */
+            max-width: 150px;
+            max-height: 150px;
+        }
+        #img1 {
+            z-index: 2; /* Вторая картинка поверх первой */
+            
+        }
+        #img2 {
+            z-index: 1; /* Первая картинка под второй */
+        }
+
+        /* Задание 3: Светофор */
+        #traffic-light {
+            display: flex;
+            flex-direction: column; /* Располагаем элементы вертикально */
+            align-items: center;    /* Центрируем по горизонтали */
+            gap: 10px;              /* Расстояние между кругами */
+            width: 100px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .light {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; /* Делаем элементы круглыми */
+        }
+        #red { background-color: red; }
+        #yellow { background-color: yellow; }
+        #green { background-color: green; }
+
+        /* Задание 4: Лабиринт 3x3 */
+        #maze {
+            display: grid;
+            grid-template-columns: repeat(3, 100px); /* 3 колонки по 100px */
+            grid-template-rows: repeat(3, 100px);    /* 3 строки по 100px */
+            width: 300px; /* Общая ширина (3 * 100px) */
+        }
+        .cell {
+            display: flex;/*Центрует содержимое ячейки*/
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        /* Отвечает за сетку. У каждой ячейки изначально есть все 4 границы. */
+        .cell { border: 4px solid black; }
+      /*убираю границы, чтобы был виден лабиринт*/
+        #cell1, #cell2, #cell3, #cell5, #cell8, #cell9 {border-left: none;}
+        
+        #cell1, #cell2, #cell4, #cell7, #cell8, #cell9 {border-right: none;}
+        #cell2, #cell3, #cell4 { border-bottom: none; }
+        #cell5, #cell6, #cell7 { border-top: none; }
+    </style>
+</head>
+<body>
+
+    <section id="task1">
+
+Анастасия Кортунова, [13.09.2025]
+<h2>Задание 1: Текст</h2>
+        <p>JavaScript (аббр. JS) — мультипарадигменный язык программирования. Поддерживает объектно-ориентированный, императивный и функциональный стили. Является реализацией спецификации ECMAScript (стандарт ECMA-262). JavaScript обычно используется как встраиваемый язык для программного доступа к объектам приложений. Наиболее широкое применение находит в браузерах как язык сценариев для придания интерактивности веб-страницам.</p>
+    </section>
+
+    <section id="task2">
+        <h2>Задание 2: Наложение картинок</h2>
+        <p>Картинки расположены одна поверх другой и отцентрированы.</p>
+        <div>
+            <img id="img2" src="https://i.pinimg.com/236x/cd/16/12/cd16121609a79d95dffbfa28a326331e.jpg" alt="Картинка 2">
+            <img id="img1" src="https://img2.akspic.ru/crops/8/4/6/4/6/164648/164648-kot-kotenok-privlekatelnost-golova-glaz-3840x2160.jpg" alt="Картинка 1">
+        </div>
+    </section>
+
+    <section>
+        <h2>Задание 3: Светофор</h2>
+        <div id="traffic-light">
+            <div id="red" class="light"></div>
+            <div id="yellow" class="light"></div>
+            <div id="green" class="light"></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Задание 4: Лабиринт 3x3</h2>
+        <div id="maze">
+            <div id="cell1" class="cell">1</div>
+            <div id="cell2" class="cell">2</div>
+            <div id="cell3" class="cell">3</div>
+            <div id="cell4" class="cell">4</div>
+            <div id="cell5" class="cell">5</div>
+            <div id="cell6" class="cell">6</div>
+            <div id="cell7" class="cell">7</div>
+            <div id="cell8" class="cell">8</div>
+            <div id="cell9" class="cell">9</div>
+        </div>
+        <p><small>Вход слева (ячейка 1), выход снизу (ячейка 9). Путь: 1 -> 2 -> 5 -> 4 -> 7 -> 8 -> 9.</small></p>
+    </section>
+
+</body>
+</html>
