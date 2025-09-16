@@ -25,26 +25,26 @@
 
         /* Задание 1: Стилизация текста по варианту 10 */
         #task1 {
-            text-align: left; /* Выравнивание по правому краю */
+            text-align: left; 
         }
         #task1 p {
-            color: #65A82E;       /* Цвет текста */
-            background-color: #8F8805; /* Цвет фона текста */
-            padding: 15px;        /* Внутренний отступ */
-            border-radius: 5px;   /* Скругление углов  */
+            color: #65A82E;       
+            background-color: #8F8805; 
+            padding: 15px;        
+            border-radius: 5px;   
         }
 
         /* Задание 2: Позиционирование картинок */
         #task2 {
-            position: relative; /* Создаем контекст для позиционирования дочерних элементов */
-            height: 200px; /* Высота контейнера для картинок */
+            position: relative; 
+            height: 200px; 
             background-color: #ffffff;
         }
         #task2 img {
             position: absolute; 
-            top: 50%;           /* Сдвигаем верхний край вниз на 50% высоты родителя */
-            left: 50%;          /* Сдвигаем левый край вправо на 50% ширины родителя */
-            transform: translate(-50%, -50%); /* Сдвигаем сам элемент обратно на половину его ширины и высоты, чтобы центрировать */
+            top: 50%;           
+            left: 50%;          
+            transform: translate(-50%, -50%); 
             max-width: 150px;
             max-height: 150px;
         }
@@ -53,15 +53,15 @@
             
         }
         #img2 {
-            z-index: 1; /* Первая картинка под второй */
+            z-index: 1; 
         }
 
         /* Задание 3: Светофор */
         #traffic-light {
             display: flex;
-            flex-direction: column; /* Располагаем элементы вертикально */
-            align-items: center;    /* Центрируем по горизонтали */
-            gap: 10px;              /* Расстояние между кругами */
+            flex-direction: column; 
+            align-items: center;    
+            gap: 10px;              
             width: 100px;
             background-color: #333;
             padding: 20px;
@@ -70,7 +70,7 @@
         .light {
             width: 80px;
             height: 80px;
-            border-radius: 50%; /* Делаем элементы круглыми */
+            border-radius: 50%; 
         }
         #red { background-color: red; }
         #yellow { background-color: yellow; }
@@ -79,19 +79,17 @@
         /* Задание 4: Лабиринт 3x3 */
         #maze {
             display: grid;
-            grid-template-columns: repeat(3, 100px); /* 3 колонки по 100px */
-            grid-template-rows: repeat(3, 100px);    /* 3 строки по 100px */
-            width: 300px; /* Общая ширина (3 * 100px) */
+            grid-template-columns: repeat(3, 100px); 
+            grid-template-rows: repeat(3, 100px);    
+            width: 300px; 
         }
         .cell {
-            display: flex;/*Центрует содержимое ячейки*/
+            display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
         }
-        /* Отвечает за сетку. У каждой ячейки изначально есть все 4 границы. */
         .cell { border: 4px solid black; }
-      /*убираю границы, чтобы был виден лабиринт*/
         #cell1, #cell2, #cell3, #cell5, #cell8, #cell9 {border-left: none;}
         
         #cell1, #cell2, #cell4, #cell7, #cell8, #cell9 {border-right: none;}
