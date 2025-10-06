@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 2;
+    color: #1f1f1f;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Первый сектор - Профиль */
+.profile-section {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #85b8eb;
+}
+
+.photo-container {
+    flex: 0 0 300px;
+}
+
+.photo {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.personal-info {
+    flex: 1;
+}
+
+.personal-info h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 28px;
+    border-bottom: 3px solid #6634db;
+    padding-bottom: 10px;
+}
+
+.my_data {
+    list-style: none;
+}
+
+.my_data li {
+    margin-bottom: 15px;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.my_data strong {
+    color: #ecf0f1;
+}
+
+.my_data a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.my_data a:hover {
+    color: #28092a;
+    text-decoration: underline;
+}
+
+/* Секции с информацией */
+.about-section,
+.skills-section,
+.works-section {
+    margin-bottom: 35px;
+    padding: 25px;
+    background: #5890ff84;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(67, 67, 67, 0.08);
+}
+
+.about-section h2,
+.skills-section h2,
+.works-section h2 {
+    color: #0f151a;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-left: 4px solid #000000;
+    padding-left: 15px;
+}
+
+/* Списки */
+.about_me,
+.hard_skills,
+.soft_skills {
+    list-style: none;
+}
+
+.about_me li,
+.hard_skills li,
+.soft_skills li {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-left: 4px solid #b15886;
+    border-radius: 6px;
+    line-height: 1.6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about_me li:hover,
+.hard_skills li:hover,
+.soft_skills li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+.about_me strong {
+    color: #000000;
+}
+
+.hard_skills li {
+    border-left-color: #b15886;
+}
+
+.soft_skills li {
+    border-left-color: #b15886;
+}
+
+.works-section {
+    margin-bottom: 35px;
+    padding: 25px;
+    background: #5890ff84;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(67, 67, 67, 0.08);
+}
+
+.works-section h2 {
+    color: #0f151a;
+    margin-bottom: 25px;
+    font-size: 24px;
+    border-left: 4px solid #000000;
+    padding-left: 15px;
+    text-align: left;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 25px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.work-item {
+    text-align: center;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #b15886;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.25);
+}
+
+.work-item.small {
+    grid-row: 1;
+}
+
+.work-item.large {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.work-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.work-item.small .work-image {
+    height: 200px;
+}
+
+.work-item.large .work-image {
+    height: 280px;
+}
+
+.work-caption {
+    font-size: 16px;
+    color: #2c3e50;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.5;
+    padding: 8px 0;
+}
+    
+    .work-item.small,
+    .work-item.large {
+        grid-row: auto;
+        grid-column: auto;
+    }
+    
+    .work-item.small .work-image,
+    .work-item.large .work-image {
+        height: 220px;
+    }
+    
+    .works-section h2 {
+        text-align: left;
+    }
