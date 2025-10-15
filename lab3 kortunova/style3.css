@@ -21,8 +21,8 @@ body {
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Первый сектор - Профиль */
-.profile-section {
+
+.profile {
     display: flex;
     gap: 40px;
     align-items: flex-start;
@@ -31,22 +31,22 @@ body {
     border-bottom: 2px solid #85b8eb;
 }
 
-.photo-container {
+.profile__photo-container {
     flex: 0 0 300px;
 }
 
-.photo {
+.profile__photo {
     width: 100%;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
-.personal-info {
+.profile__info {
     flex: 1;
 }
 
-.personal-info__title {
+.profile__title {
     color: #2c3e50;
     margin-bottom: 20px;
     font-size: 28px;
@@ -54,11 +54,11 @@ body {
     padding-bottom: 10px;
 }
 
-.personal-info__list {
+.profile__list {
     list-style: none;
 }
 
-.personal-info__item {
+.profile__item {
     margin-bottom: 15px;
     padding: 12px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -67,25 +67,25 @@ body {
     font-size: 16px;
 }
 
-.personal-info__strong {
+.profile__strong {
     color: #ecf0f1;
 }
 
-.personal-info__link {
+.profile__link {
     color: #ecf0f1;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.personal-info__link:hover {
+.profile__link:hover {
     color: #28092a;
     text-decoration: underline;
 }
 
-/* Секции с информацией */
-.about-section,
-.skills-section,
-.works-section {
+
+.about,
+.skills,
+.works {
     margin-bottom: 35px;
     padding: 25px;
     background: #5890ff84;
@@ -93,9 +93,9 @@ body {
     box-shadow: 0 3px 15px rgba(67, 67, 67, 0.08);
 }
 
-.about-section__title,
-.skills-section__title,
-.works-section__title {
+.about__title,
+.skills__title,
+.works__title {
     color: #0f151a;
     margin-bottom: 20px;
     font-size: 24px;
@@ -103,14 +103,14 @@ body {
     padding-left: 15px;
 }
 
-/* Списки */
-.about-section__list,
-.skills-section__list {
+
+.about__list,
+.skills__list {
     list-style: none;
 }
 
-.about-section__item,
-.skills-section__item {
+.about__item,
+.skills__item {
     margin-bottom: 15px;
     padding: 15px;
     background: #f8f9fa;
@@ -120,25 +120,25 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.about-section__item:hover,
-.skills-section__item:hover {
+.about__item:hover,
+.skills__item:hover {
     transform: translateX(5px);
     box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
 }
 
-.about-section__strong {
+.about__strong {
     color: #000000;
 }
 
-.skills-section__item--hard {
+.skills__list_hard .skills__item {
     border-left-color: #b15886;
 }
 
-.skills-section__item--soft {
+.skills__list_soft .skills__item {
     border-left-color: #b15886;
 }
 
-.works-grid {
+.works__grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr;
     gap: 25px;
@@ -146,7 +146,7 @@ body {
     align-items: start;
 }
 
-.works-grid__item {
+.works__item {
     text-align: center;
     background: #f8f9fa;
     padding: 20px;
@@ -156,21 +156,21 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.works-grid__item:hover {
+.works__item:hover {
     transform: translateY(-8px);
     box-shadow: 0 6px 20px rgba(52, 152, 219, 0.25);
 }
 
-.works-grid__item--small {
+.works__item_small {
     grid-row: 1;
 }
 
-.works-grid__item--large {
+.works__item_large {
     grid-row: 1;
     grid-column: 2;
 }
 
-.works-grid__image {
+.works__image {
     width: 100%;
     object-fit: cover;
     border-radius: 8px;
@@ -178,15 +178,15 @@ body {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
-.works-grid__item--small .works-grid__image {
+.works__item_small .works__image {
     height: 200px;
 }
 
-.works-grid__item--large .works-grid__image {
+.works__item_large .works__image {
     height: 280px;
 }
 
-.works-grid__caption {
+.works__caption {
     font-size: 16px;
     color: #2c3e50;
     font-weight: 600;
@@ -195,33 +195,33 @@ body {
     padding: 8px 0;
 }
 
-/* Адаптивность для мобильных устройств */
+
 @media (max-width: 768px) {
-    .profile-section {
+    .profile {
         flex-direction: column;
         gap: 20px;
     }
     
-    .photo-container {
+    .profile__photo-container {
         flex: 0 0 auto;
         width: 100%;
         max-width: 300px;
         margin: 0 auto;
     }
     
-    .works-grid {
+    .works__grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
     
-    .works-grid__item--small,
-    .works-grid__item--large {
+    .works__item_small,
+    .works__item_large {
         grid-row: auto;
         grid-column: auto;
     }
     
-    .works-grid__item--small .works-grid__image,
-    .works-grid__item--large .works-grid__image {
+    .works__item_small .works__image,
+    .works__item_large .works__image {
         height: 220px;
     }
     
@@ -235,21 +235,21 @@ body {
 }
 
 @media (max-width: 480px) {
-    .personal-info__title,
-    .about-section__title,
-    .skills-section__title,
-    .works-section__title {
+    .profile__title,
+    .about__title,
+    .skills__title,
+    .works__title {
         font-size: 20px;
     }
     
-    .personal-info__item,
-    .about-section__item,
-    .skills-section__item {
+    .profile__item,
+    .about__item,
+    .skills__item {
         font-size: 14px;
         padding: 10px;
     }
     
-    .works-grid__caption {
+    .works__caption {
         font-size: 14px;
     }
 }
